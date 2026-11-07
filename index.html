@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6edf2" />
+  <link rel="icon" href="data:," />
+  <title>Moonlit — a little closer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <button class="brand" aria-label="Moonlit home"><span class="brand-icon">✦</span><span>moonlit</span></button>
+      <div class="top-actions">
+        <button class="icon-button" id="soundToggle" aria-label="Toggle sound" title="Sound">♫</button>
+        <button class="profile-button" id="openCustomize"><span class="mini-avatar" id="headerAvatar">A</span><span class="profile-label">My Astra</span><span class="chevron">⌄</span></button>
+      </div>
+    </header>
+
+    <section class="game-layout" aria-label="Conversation game">
+      <section class="scene-card">
+        <div class="scene-bg"></div>
+        <div class="scene-topline"><span class="location-pill"><i></i> THE ROOFTOP GARDEN</span><span class="day-label">THURSDAY · 8:42 PM</span></div>
+        <div class="scene-copy"><div class="eyebrow">A MOMENT WITH ASTRA</div><h1 id="sceneTitle">Under the<br><em>same stars.</em></h1><p id="sceneDesc">The city hums below. Astra turns toward you, a question hiding in her smile.</p></div>
+        <div class="character-wrap" id="characterWrap" aria-label="Astra, your anime companion">
+          <div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">✧</div>
+          <div class="speech-bubble" id="speechBubble">I was hoping<br>you'd stay a little.</div>
+          <div class="character-shadow"></div>
+          <svg class="character-art" id="characterArt" viewBox="0 0 360 520" role="img" aria-label="Anime-style illustration of Astra">
+            <defs>
+              <linearGradient id="hairGrad" x1="0" y1="0" x2="1" y2="1"><stop id="hairStop1" offset="0" stop-color="#483a68"/><stop id="hairStop2" offset="1" stop-color="#9c78b4"/></linearGradient>
+              <linearGradient id="dressGrad" x1="0" y1="0" x2="1" y2="1"><stop id="outfitStop1" offset="0" stop-color="#f3a5b4"/><stop id="outfitStop2" offset="1" stop-color="#bc7997"/></linearGradient>
+            </defs>
+            <!-- hair behind -->
+            <path d="M91 154 Q73 48 178 42 Q281 37 276 155 L298 351 Q277 386 257 325 L244 188 L116 185 Q106 289 84 342 Q61 359 64 321Z" fill="url(#hairGrad)"/>
+            <!-- shoulders and outfit -->
+            <path d="M118 288 Q142 269 180 272 Q221 269 245 290 Q276 312 295 520 L65 520 Q81 337 118 288Z" fill="url(#dressGrad)"/>
+            <path d="M143 280 Q180 308 216 280 L231 328 Q180 359 128 328Z" fill="#fff0ed" opacity=".8"/>
+            <path d="M180 323 L180 491" stroke="#fff4ef" stroke-width="3" opacity=".65"/>
+            <path d="M95 412 Q180 444 266 410" fill="none" stroke="#fff4ef" stroke-width="2" opacity=".45"/>
+            <!-- neck -->
+            <path d="M150 236 L150 292 Q179 319 211 287 L208 232Z" fill="#f5c5b5"/>
+            <!-- face -->
+            <path d="M112 144 Q113 75 182 74 Q250 79 247 157 L239 214 Q230 261 181 275 Q131 262 119 213Z" fill="#ffddcc"/>
+            <!-- ears -->
+            <ellipse cx="113" cy="183" rx="13" ry="21" fill="#f5c5b5"/><ellipse cx="247" cy="183" rx="13" ry="21" fill="#f5c5b5"/>
+            <!-- bangs -->
+            <path d="M97 164 Q84 67 156 56 Q239 42 264 114 Q243 99 230 86 Q227 119 206 138 Q208 107 198 88 Q175 131 145 146 Q157 114 150 94 Q134 142 97 164Z" fill="url(#hairGrad)"/>
+            <path d="M139 79 Q166 56 194 65" fill="none" stroke="#d7c3e9" stroke-width="5" stroke-linecap="round" opacity=".45"/>
+            <!-- eyes -->
+            <path d="M133 174 Q151 158 169 174 Q153 196 136 181Z" fill="#fff"/><path d="M193 174 Q211 158 229 174 Q213 196 196 181Z" fill="#fff"/>
+            <ellipse id="eyeLeft" cx="153" cy="177" rx="8" ry="11" fill="#5b638e"/><ellipse id="eyeRight" cx="213" cy="177" rx="8" ry="11" fill="#5b638e"/>
+            <circle cx="155" cy="173" r="3" fill="white"/><circle cx="215" cy="173" r="3" fill="white"/>
+            <path d="M132 167 Q151 155 169 167 M192 167 Q212 155 230 167" fill="none" stroke="#674a62" stroke-width="4" stroke-linecap="round"/>
+            <path d="M180 184 Q175 200 181 202" fill="none" stroke="#df9d93" stroke-width="2" stroke-linecap="round"/>
+            <path id="mouth" d="M169 220 Q181 229 193 218" fill="none" stroke="#b65f77" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="135" cy="205" rx="12" ry="6" fill="#ee9e9d" opacity=".35"/><ellipse cx="225" cy="205" rx="12" ry="6" fill="#ee9e9d" opacity=".35"/>
+            <!-- accessories -->
+            <path d="M105 120 Q77 132 89 162 Q104 150 112 139" fill="#f2cedd"/><circle cx="101" cy="151" r="5" fill="#ffe5a7"/>
+            <path d="M247 152 Q269 161 258 184" fill="none" stroke="#ffe2a5" stroke-width="4"/><circle cx="258" cy="185" r="6" fill="#ffe2a5"/>
+          </svg>
+          <div class="character-caption"><span class="online-dot"></span><span id="characterName">Astra</span><span class="caption-divider">·</span><span id="moodLabel">a little hopeful</span></div>
+        </div>
+        <div class="scene-bottom"><span>✦ &nbsp; YOUR STORY, YOUR PACE</span><button class="journal-link" id="journalButton">♡ <span>Memory book</span></button></div>
+      </section>
+
+      <section class="conversation-panel">
+        <div class="bond-card"><div class="bond-top"><div><div class="small-label">YOUR CONNECTION</div><div class="bond-level"><span id="bondName">New spark</span><span class="bond-number" id="bondNumber">12%</span></div></div><div class="heart-orbit"><span>♥</span></div></div><div class="progress-track"><div class="progress-fill" id="bondFill"></div></div><div class="bond-foot"><span>✧ Every little moment matters</span><span id="memoryCount">1 memory</span></div></div>
+          <div class="chat-heading"><div><div class="small-label">TONIGHT'S CONVERSATION</div><h2 id="chatHeading">Getting to know you</h2></div><button class="call-button" id="callButton"><span>▣</span> Video date</button></div>
+          <div class="chat-log" id="chatLog" aria-live="polite">
+            <div class="chat-line astra-line"><span class="chat-avatar">✦</span><div class="bubble astra-bubble"><span class="speaker">ASTRA</span><span id="astraLine">The city looks softer from up here. Do you ever wish you could pause a moment?</span></div></div>
+          </div>
+          <div class="choices-label" id="choicesLabel">WHAT DO YOU SAY?</div>
+          <div class="choices" id="choices"></div>
+          <div class="chat-footer"><span class="privacy-mark">◈</span><span>Your story stays on this device.</span><button id="settingsButton" aria-label="Privacy and permissions">Settings</button></div>
+        </div>
+      </section>
+    </section>
+
+    <div class="companion-chip hidden" id="companionChip"><span class="chip-avatar">✦</span><span><b id="chipName">Astra</b><small>is here with you</small></span><button id="dismissChip" aria-label="Hide companion">×</button></div>
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
+  <script src="game.js"></script>
+</body>
+</html>
